@@ -3,7 +3,8 @@ function Navbar({ currentPage, setCurrentPage }) {
     { id: 'lost', label: 'Reportar perdida' },
     { id: 'sighting', label: 'Avistamiento' },
     { id: 'search', label: 'Buscar por imagen' },
-    { id: 'caregivers', label: 'Cuidadores' }
+    { id: 'caregivers', label: 'Cuidadores' },
+    { id: 'history', label: 'Reportes registrados' }
   ];
 
   return (

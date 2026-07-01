@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import Navbar from './components/Navbar';
-import ReportLostPet from './pages/ReportLostPet';
-import ReportSighting from './pages/ReportSighting';
-import ImageSearch from './pages/ImageSearch';
-import Caregivers from './pages/Caregivers';
+import Navbar from './components/Navbar.jsx';
+import ReportLostPet from './pages/ReportLostPet.jsx';
+import ReportSighting from './pages/ReportSighting.jsx';
+import ImageSearch from './pages/ImageSearch.jsx';
+import Caregivers from './pages/Caregivers.jsx';
+import LostPetHistory from './pages/LostPetHistory.jsx';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('lost');
@@ -23,6 +24,10 @@ function App() {
 
     if (currentPage === 'caregivers') {
       return <Caregivers />;
+    }
+
+    if (currentPage === 'history') {
+      return <LostPetHistory />;
     }
 
     return <ReportLostPet />;

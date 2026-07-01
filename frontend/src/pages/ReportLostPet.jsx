@@ -117,7 +117,42 @@ function ReportLostPet() {
 
         {result && (
           <div className={result.success ? 'result-box' : 'error-box'}>
-            {JSON.stringify(result, null, 2)}
+            <h3>{result.success ? 'Alerta publicada' : 'No se pudo publicar la alerta'}</h3>
+
+            <p>{result.message}</p>
+
+            {result.success && result.data && (
+              <div>
+                <p><strong>Mascota:</strong> {result.data.name}</p>
+                <p><strong>Especie:</strong> {result.data.species}</p>
+                <p><strong>Raza:</strong> {result.data.breed}</p>
+                <p><strong>Estado:</strong> {result.data.status}</p>
+                <p>
+                  <strong>Ubicacion:</strong> {result.data.location.lat}, {result.data.location.lng}
+                </p>
+              </div>
+            )}
+
+            {result.notifications && (
+              <div>
+                <h4>Notificaciones simuladas</h4>
+                <p>
+                  <strong>Total enviadas:</strong> {result.notifications.total}
+                </p>
+
+                {result.notifications.items.length > 0 ? (
+                  result.notifications.items.map((item) => (
+                    <div className="notification-card" key={item.userId}>
+                      <p><strong>Usuario:</strong> {item.userName}</p>
+                      <p><strong>Mensaje:</strong> {item.message}</p>
+                      <p><strong>Distancia:</strong> {item.distanceKm} km</p>
+                    </div>
+                  ))
+                ) : (
+                  <p>No se encontraron usuarios cercanos para notificar.</p>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>

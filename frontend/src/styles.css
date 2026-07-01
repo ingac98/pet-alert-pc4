@@ -174,3 +174,36 @@ button.secondary {
     padding-right: 18px;
   }
 }
+
+.report-list {
+  margin-top: 16px;
+}
+
+.report-card {
+  border: 1px solid #d6d6d6;
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.report-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.report-card p {
+  margin: 6px 0;
+}
+
+.notification-card {
+  background: #ffffff;
+  border: 1px solid #c8d6c8;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.notification-card p {
+  margin: 5px 0;
+}
