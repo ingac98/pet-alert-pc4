@@ -1,5 +1,3 @@
-# 2. `docs/patrones.md`
-
 # Patrones de Comportamiento Usados
 
 El proyecto utiliza cinco patrones de comportamiento.
