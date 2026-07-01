@@ -77,8 +77,6 @@ GET  /api/sightings
 POST /api/search/image
 Alcance del proyecto
 
-Este proyecto es un MVP académico. No utiliza base de datos externa ni reconocimiento real por imagen. Los datos se guardan temporalmente en memoria y se pierden al reiniciar el backend.
-
 Documentación
 
 La documentación se encuentra en:
