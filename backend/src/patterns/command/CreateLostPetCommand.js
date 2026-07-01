@@ -6,6 +6,7 @@ const LocationValidator = require('../chain/LocationValidator');
 const ImageValidator = require('../chain/ImageValidator');
 
 const { saveLostPet } = require('../../services/lostPetStore');
+const { notifyNearbyUsers } = require('../../services/notificationService');
 
 class CreateLostPetCommand {
   constructor(data) {
@@ -39,10 +40,16 @@ class CreateLostPetCommand {
 
     const savedLostPet = saveLostPet(lostPet);
 
+    const notifications = notifyNearbyUsers(savedLostPet);
+
     return {
       success: true,
       message: 'Mascota perdida registrada correctamente.',
-      data: savedLostPet
+      data: savedLostPet,
+      notifications: {
+        total: notifications.length,
+        items: notifications
+      }
     };
   }
 }
